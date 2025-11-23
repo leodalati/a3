@@ -1,16 +1,14 @@
-let mongoose = require('mongoose');
+let mongoose = require("mongoose");
 
-// Create a model
-let employeeRecordModel = mongoose.Schema(
-    {
+let baseballModel = mongoose.Schema({
     name: String,
+    age: String,
     position: String,
-    department: String,
-    contact_info: String,
-    employment_status: String
-},
-{
-    collection: "employee_records"
-}
+    avg: String,
+    },
+    {
+        collection: "baseball_players"
+    }
 );
-module.exports = mongoose.model('employee_record', employeeRecordModel);
+module.exports=mongoose.model('employee_record', baseballModel);
+

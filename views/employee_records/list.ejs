@@ -12,7 +12,7 @@
           <div class="d-flex justify-content-between align-items-center mb-4">
             <h1 class="text-primary mb-0"><%= title %></h1>
             <a href="/employee_records/create" class="btn btn-success">
-              Add New Employee
+              Add New Player
             </a>
           </div>
           
@@ -22,9 +22,7 @@
                 <tr>
                   <th class="text-center">Name</th>
                   <th class="text-center">Position</th>
-                  <th class="text-center">Department</th>
-                  <th class="text-center">Contact Info</th>
-                  <th class="text-center">Employment Status</th>
+                  <th class="text-center">batting average</th>
                   <th class="text-center">Actions</th>
                 </tr>
               </thead>
@@ -34,9 +32,8 @@
                   <tr>
                     <td class="text-center"><%= EmployeeRecords[count].name %></td>
                     <td class="text-center"><%= EmployeeRecords[count].position %></td>
-                    <td class="text-center"><%= EmployeeRecords[count].department %></td>
-                    <td class="text-center"><%= EmployeeRecords[count].contact_info %></td>
-                    <td class="text-center"><%= EmployeeRecords[count].employment_status %></td>
+                    <td class="text-center"><%= EmployeeRecords[count].avg %></td>
+                    
                     <!-- corrected route -->
                     <td class="text-center">
                       <a href="/update/<%= EmployeeRecords[count]._id %>" class="btn btn-warning btn-sm">

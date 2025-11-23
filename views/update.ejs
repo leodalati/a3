@@ -8,7 +8,7 @@
     <div class="col-lg-10 offset-lg-1">
       <div class="card shadow-sm">
         <div class="card-body">
-          <h1 class="text-primary mb-4">Select Employee to Update</h1>
+          <h1 class="text-primary mb-4">Select Player to Update</h1>
           
           <div class="table-responsive">
             <table class="table table-bordered table-striped table-hover align-middle">
@@ -16,9 +16,8 @@
                 <tr>
                   <th class="text-center">Name</th>
                   <th class="text-center">Position</th>
-                  <th class="text-center">Department</th>
-                  <th class="text-center">Contact Info</th>
-                  <th class="text-center">Employment Status</th>
+                  <th class="text-center">Batting average</th>
+                  
                   <th class="text-center">Actions</th>
                 </tr>
               </thead>
@@ -28,9 +27,8 @@
                   <tr>
                     <td class="text-center"><%= EmployeeRecords[count].name %></td>
                     <td class="text-center"><%= EmployeeRecords[count].position %></td>
-                    <td class="text-center"><%= EmployeeRecords[count].department %></td>
-                    <td class="text-center"><%= EmployeeRecords[count].contact_info %></td>
-                    <td class="text-center"><%= EmployeeRecords[count].employment_status %></td>
+                    <td class="text-center"><%= EmployeeRecords[count].avg %></td>
+                    
                     <td class="text-center">
                       <a href="/update/<%= EmployeeRecords[count]._id %>" class="btn btn-warning btn-sm">
                         Edit

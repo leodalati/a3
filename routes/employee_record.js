@@ -32,9 +32,8 @@ router.post('/create', async (req, res) => {
     const newEmployee = new employee_record({
       name: req.body.name,
       position: req.body.position,
-      department: req.body.department,
-      contact_info: req.body.contact_info,
-      employment_status: req.body.employment_status
+      avg: req.body.avg,
+      
     });
 
     await newEmployee.save();
@@ -74,9 +73,8 @@ router.post('/:id/update', async (req, res) => {
     const updatedEmployee = {
       name: req.body.name,
       position: req.body.position,
-      department: req.body.department,
-      contact_info: req.body.contact_info,
-      employment_status: req.body.employment_status
+      avg: req.body.avg,
+      
     };
 
     await employee_record.findByIdAndUpdate(req.params.id, updatedEmployee);
