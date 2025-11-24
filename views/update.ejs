@@ -17,6 +17,8 @@
                   <th class="text-center">Name</th>
                   <th class="text-center">Position</th>
                   <th class="text-center">Batting average</th>
+                  <th class="text-center">Age</th>
+
                   
                   <th class="text-center">Actions</th>
                 </tr>
@@ -28,6 +30,8 @@
                     <td class="text-center"><%= EmployeeRecords[count].name %></td>
                     <td class="text-center"><%= EmployeeRecords[count].position %></td>
                     <td class="text-center"><%= EmployeeRecords[count].avg %></td>
+                    <td class="text-center"><%= EmployeeRecords[count].age %></td>
+
                     
                     <td class="text-center">
                       <a href="/update/<%= EmployeeRecords[count]._id %>" class="btn btn-warning btn-sm">

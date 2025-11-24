@@ -30,6 +30,8 @@
                     <td class="text-center"><%= EmployeeRecords[i].name %></td>
                     <td class="text-center"><%= EmployeeRecords[i].position %></td>
                     <td class="text-center"><%= EmployeeRecords[i].avg %></td>
+                    <td class="text-center"><%= EmployeeRecords[i].age %></td>
+                    
                     
                     <td class="text-center">
                       <form method="POST" action="/employee_records/delete/<%= EmployeeRecords[i]._id %>" onsubmit="return confirm('Delete this record?');">

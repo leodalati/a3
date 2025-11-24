@@ -8,7 +8,7 @@ router.get('/', async (req, res, next) => {
   try {
     const EmployeeRecords = await employee_record.find();
     res.render('employee_records/list', {
-      title: 'Employee Records',
+      title: 'Player Records',
       EmployeeRecords: EmployeeRecords
     });
   }
@@ -21,7 +21,7 @@ router.get('/', async (req, res, next) => {
 // GET - Show Create Employee Form
 router.get('/create', (req, res) => {
   res.render('employee_records/create', {
-    title: 'Add New Employee',
+    title: 'Add New Player',
     employee: {}
   });
 });
@@ -33,6 +33,7 @@ router.post('/create', async (req, res) => {
       name: req.body.name,
       position: req.body.position,
       avg: req.body.avg,
+      age: req.body.age,
       
     });
 
@@ -42,7 +43,7 @@ router.post('/create', async (req, res) => {
   catch (err) {
     console.error(err);
     res.render('employee_records/create', {
-      title: 'Add New Employee - Error',
+      title: 'Add New Player - Error',
       error: 'Error creating employee: ' + err.message
     });
   }
@@ -57,7 +58,7 @@ router.get('/:id/edit', async (req, res) => {
     }
 
     res.render('employee_records/update', {
-      title: 'Edit Employee',
+      title: 'Edit Player',
       employee: employee
     });
   }
@@ -74,7 +75,7 @@ router.post('/:id/update', async (req, res) => {
       name: req.body.name,
       position: req.body.position,
       avg: req.body.avg,
-      
+      age: req.body.age,
     };
 
     await employee_record.findByIdAndUpdate(req.params.id, updatedEmployee);
@@ -84,7 +85,7 @@ router.post('/:id/update', async (req, res) => {
     console.error(err);
     const employee = await employee_record.findById(req.params.id);
     res.render('employee_records/update', {
-      title: 'Edit Employee - Error',
+      title: 'Edit player - Error',
       employee: employee,
       error: 'Error updating employee: ' + err.message
     });
@@ -96,7 +97,7 @@ router.get('/delete', async (req, res) => {
   try {
     const EmployeeRecords = await employee_record.find();
     res.render('employee_records/delete', {
-      title: 'Delete Employee Records',
+      title: 'Delete Player Records',
       EmployeeRecords: EmployeeRecords
     });
   } catch (err) {
